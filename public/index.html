@@ -1,14 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<DOCTYPE html>
+  <html lang="en">
+
   <head>
+
+
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css" />
+
+    <!-- Font CSS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+      rel="stylesheet">
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -19,11 +31,49 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav id="nav-bar">
+      <!-- make it a flex, do one box containing two boxes -->
       <span>tweeter</span>
+      <div id="writeTweet">
+        <span>tweet tweet me</span>
+      </div>
     </nav>
-
+    <header>
+      <!-- header only if it doesnt hv a class name, with a .header will need a class-->
+      <div class="header">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class='name'>
+        <h2> HanZo </h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <p> Tell them I hate them. Is the Space Pope reptilian!? Tell her she looks thin. Hello, little man. I will
+        destroy
+        you!
+        I've got to find a way to escape the horrible ravages of youth. Suddenly, I'm going to the bathroom like
+        clockwork,
+        every three hours. And those jerks at Social Security stopped sending me checks. Now 'I' have to pay them'!</p>
+
+      <p>Those options are already baked in with this model shoot me an email clear blue water but we need distributors
+        to
+        evangelize the new line to local markets, but fire up your browser. Strategic high-level 30,000 ft view. Drill
+        down
+        re-inventing the wheel at the end of the day but curate imagineer, or to be inspired is to become creative.</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets/">
+          <label for="tweet-text"> tweet tweet</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
   </body>
-</html>
+
+  </html>
