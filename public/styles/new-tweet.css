@@ -5,6 +5,8 @@
   background-color: #f4f1ec;
   margin-right: 10px;
   margin-left: 10px;
+  
+  
 }
 
 .new-tweet {
@@ -57,13 +59,12 @@ textarea#tweet-text::placeholder {
     color:#ff0000;
   }
 
-  
+
  .tweet-header {
   display: flex;
   align-items: flex-start;
   padding-left: 1em;
   padding-top: 1em;
- 
 
 }
 
@@ -86,6 +87,7 @@ h1.posterName {
 h1.username {
   font-weight: 700;
   font-size: 30px;
+  color: #f4f1ec;
   padding-right: 1.5em;
 }
 
@@ -110,9 +112,11 @@ h1.username {
   font-size: 15px;
 }
 
-article:hover {
-  
-    box-shadow: 0  30px 30px #89a5ff;
+article:hover  {
+  box-shadow: 10px  10px #95c1eb;
+} 
+article:hover .username {
+  color: #95c1eb;
 } 
 
 /* #outsideTweetsContainer:hover {
