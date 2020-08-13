@@ -4,34 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
 
 createTweetElement = (tweetData) => {
   //1461113959088 ms make it to days 
+  let createdDate = new Date(tweetData.created_at);
+  let today = Date.now();
+  let difference = Math.round((today - createdDate) / 1000 / 60 / 60 / 24);
+
   const tweet = `
      <article>
           <header class="tweet-header">
@@ -44,10 +23,11 @@ createTweetElement = (tweetData) => {
           <div class="tweet-content">
             ${tweetData.content.text} </div>
           <footer class="tweet-footer">
-            <div class="daysAGo"> ${tweetData.created_at} days ago </div>
+            <div class="daysAGo"> ${difference} days ago </div>
             <div id="icons">
-              <i class="fas fa-camera"></i>
-              <i class="far fa-arrow-alt-circle-up"></i>
+              <i class="fa fa-heart" aria-hidden="true"></i>
+             <i class="fa fa-retweet" aria-hidden="true"></i>
+            <i class="fa fa-flag" aria-hidden="true"></i>
             </div>
             </div>
           </footer>
@@ -58,13 +38,46 @@ createTweetElement = (tweetData) => {
 
 //helper function
 const renderTweets = function(tweets) {
-  for (tweet of tweets) {
-    $('#tweets-container').append(createTweetElement(tweet));
+  for (tweet of tweets.reverse()) {
+    $('.tweets-container').append(createTweetElement(tweet));
   }
 }
 
 $(document).ready(function() {
-  renderTweets(tweetData);
+  loadtweets();
+  const $form = $('form');
+  $form.on('submit', function(event) {
+    event.preventDefault()
+    const $form = $('form');
+    $.ajax({
+      url: $form.attr('action'),
+      method: "POST",
+      data: $form.serialize()
+    }).then((response) => {
+      $("#tweet-text").val('');
+      loadtweets();
+    })
+  })
 });
+
+const loadtweets = function() {
+  const $form = $('form');
+  $('.tweets-container').empty();
+  $.get($form.attr('action'), function(data) {
+    // console.log(data)
+    renderTweets(data);
+  })
+};
+
+// const loadTweets = function() {
+//   let dataJ = '/data-files/initial-tweets.json';
+//   console.log(dataJ);
+//   $.ajax({ url: '/tweets', method: `GET` })
+//     .then((data) => {
+//       return renderTweets(data)
+//     })
+// }
+
+// loadTweets();
 
 

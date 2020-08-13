@@ -55,12 +55,10 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-
       <section class="new-tweet">
-
         <h1>Compose Tweet</h1>
-        <form method="POST" action="/tweets/">
 
+        <form method="POST" action="/tweets/">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div>
             <div class="tweet-action">
@@ -69,8 +67,9 @@
             </div>
           </div>
         </form>
+
       </section>
-      <section id="tweets-container">
+      <section class="tweets-container">
 
       </section>
     </main>
