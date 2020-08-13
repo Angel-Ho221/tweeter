@@ -45,29 +45,39 @@ const renderTweets = function(tweets) {
 
 $(document).ready(function() {
   loadtweets();
-  const $form = $('form');
-  $form.on('submit', function(event) {
-    event.preventDefault()
-    const $form = $('form');
+  const $form = $("form");
+  $form.on("submit", function(event) {
+    event.preventDefault();
+    if ($("#tweet-text").val().length > 140) {
+      $("#err-msg").addClass("show");
+      return;
+    } else if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      $("#err-msg").addClass("show");
+      return;
+    } else {
+      $("#err-msg").removeClass("show")
+    }
+    const $form = $("form");
     $.ajax({
-      url: $form.attr('action'),
+      url: $form.attr("action"),
       method: "POST",
       data: $form.serialize()
     }).then((response) => {
-      $("#tweet-text").val('');
+      $("#tweet-text").val("");
       loadtweets();
     })
   })
 });
 
 const loadtweets = function() {
-  const $form = $('form');
+  const $form = $("form");
   $('.tweets-container').empty();
   $.get($form.attr('action'), function(data) {
     // console.log(data)
     renderTweets(data);
   })
 };
+
 
 // const loadTweets = function() {
 //   let dataJ = '/data-files/initial-tweets.json';

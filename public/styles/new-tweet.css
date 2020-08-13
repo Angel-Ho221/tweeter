@@ -57,6 +57,31 @@ textarea#tweet-text::placeholder {
     color:#ff0000;
   }
 
+.error {
+
+  height: 2.5em;
+  visibility: hidden;
+  display         : flex;
+  justify-content : space-around;
+  align-self      : stretch;
+  align-items: center;
+  background-color: #FFBABA;
+  color           : #D8000C;
+  margin-top      : 0px;
+  font-family     : 'Source Sans Pro', sans-serif;
+  font-weight     : 300;
+  font-size       : .7em;
+  margin-left     : 20px;
+  margin-right    : 20px;
+  border: 1px solid #D8000C;
+  background-image: url('https://i.imgur.com/GnyDvKN.png');
+  background-repeat: no-repeat;
+  background-position: 50px center;
+}
+
+.error.show {
+  visibility: visible;
+}
 
  .tweet-header {
   display: flex;
