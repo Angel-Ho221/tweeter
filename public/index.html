@@ -1,81 +1,78 @@
-<DOCTYPE html>
-  <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 
-  <head>
+<head>
 
 
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-      type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
-    <!-- Font CSS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
-      rel="stylesheet">
+  <!-- Font CSS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,700;1,300;1,700&display=swap"
+    rel="stylesheet">
 
-    <!--Awesome Icons-->
-    <link rel="stylesheet" href="/font-awesome4.7.0/css/font-awesome.min.css">
+  <!--Awesome Icons-->
+  <link rel="stylesheet" href="/font-awesome4.7.0/css/font-awesome.min.css">
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-replace-svg="nest"></script>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
-  <body>
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <!-- make it a flex, do one box containing two boxes -->
-      <span>tweeter</span>
-      <div id="writeTweet">
-        <span>tweet tweet me</span>
-      </div>
-    </nav>
-    <header>
-      <!-- header only if it doesnt hv a class name, with a .header will need a class-->
-      <div class="header">
-        <img src="/images/profile-hex.png">
-      </div>
-      <br>
-      <div class='name'>
-        <h2> HanZo </h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <div id="err-msg" class="error">
-        Twee-ror! You can only enter between 1 to 140 characters! tweeeeeet!
-      </div>
-      <section class="new-tweet">
-        <h1>Compose Tweet</h1>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <!-- make it a flex, do one box containing two boxes -->
+    <span>tweeter</span>
+    <div class="writeTweet">
+      <button style='font-size:24px'>Tweet me! <i class='fas fa-pencil-alt'></i>
+      </button>
+    </div>
+  </nav>
+  <header id="header">
+    <!-- header only if it doesnt hv a class name, with a .header will need a class-->
 
-        <form method="POST" action="/tweets/">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div>
-            <div class="tweet-action">
-              <button id="tweet-button" type="submit">Tweet</button>
-              <output id="char-counter" name="counter" class="counter" for="tweet-text">140</output>
-            </div>
+    <img class="pic" src="/images/profile-hex.png">
+    <h2> GenJi HanZo TraCer </h2>
+
+  </header>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
+    <div id="err-msg" class="error">
+      Twee-ror! You can only enter between 1 to 140 characters! tweeeeeet!
+    </div>
+    <section class="new-tweet">
+
+      <h1>Compose Tweet</h1>
+      <form method="POST" action="/tweets/">
+        <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+        <div>
+          <div class="tweet-action">
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output id="char-counter" name="counter" class="counter" for="tweet-text">140</output>
           </div>
-        </form>
+        </div>
+      </form>
+    </section>
+    <section class="tweets-container">
+    </section>
+  </main>
+</body>
 
-      </section>
-      <section class="tweets-container">
-
-      </section>
-    </main>
-  </body>
-
-  </html>
+</html>

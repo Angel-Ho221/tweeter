@@ -4,6 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+const escape = function(str) {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 createTweetElement = (tweetData) => {
   //1461113959088 ms make it to days 
@@ -16,12 +21,12 @@ createTweetElement = (tweetData) => {
           <header class="tweet-header">
             <img src= ${tweetData.user.avatars}>
             <div id="nameAndUsername">
-              <h1 class="posterName">${tweetData.user.name}</h1>
+              <h1 class="posterName">${tweetData.user.name}</h1> 
               <h2 class="username">${tweetData.user.handle}</h2>
             </div>
           </header>
           <div class="tweet-content">
-            ${tweetData.content.text} </div>
+           ${escape(tweetData.content.text)} </div> 
           <footer class="tweet-footer">
             <div class="daysAGo"> ${difference} days ago </div>
             <div id="icons">
