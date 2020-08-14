@@ -3,7 +3,6 @@
 
 <head>
 
-
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
@@ -38,29 +37,24 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav id="nav-bar">
-    <!-- make it a flex, do one box containing two boxes -->
     <span>tweeter</span>
     <div class="writeTweet">
-      <button style='font-size:24px'>Tweet me! <i class='fas fa-pencil-alt'></i>
+      <button style='font-size:24px'> <i class='fas fa-pencil-alt'></i>
+        <a href='#compseText'>Tweet me!</a>
       </button>
     </div>
   </nav>
   <header id="header">
-    <!-- header only if it doesnt hv a class name, with a .header will need a class-->
-
     <img class="pic" src="/images/profile-hex.png">
     <h2> GenJi HanZo TraCer </h2>
-
   </header>
-  <!-- Page-specific (main) content here -->
   <main class="container">
     <div id="err-msg" class="error">
-      Twee-ror! You can only enter between 1 to 140 characters! tweeeeeet!
+      Twee-ror! You can only enter between 1 to 140 characters!
     </div>
     <section class="new-tweet">
-
-      <h1>Compose Tweet</h1>
-      <form method="POST" action="/tweets/">
+      <h1 id="compseText">Compose Tweet</h1>
+      <form class="tweet-form" method="POST" action="/tweets/">
         <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
         <div>
           <div class="tweet-action">

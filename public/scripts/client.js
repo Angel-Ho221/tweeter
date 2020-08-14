@@ -57,6 +57,7 @@ $(document).ready(function() {
       $("#err-msg").addClass("show");
       return;
     } else if ($("#tweet-text").val() === "" || $("#tweet-text").val() === null) {
+      console.log('test');
       $("#err-msg").addClass("show");
       return;
     } else {

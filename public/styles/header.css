@@ -6,6 +6,7 @@
   justify-content           : flex-end;
   align-items               : center; 
   background-image          : url("https://i.gifer.com/6kc.gif");
+  background-repeat         : no-repeat;
   width                     : 30%;
   margin-right              : 10px;
   margin-left               : 10px;
@@ -23,7 +24,6 @@ h2 {
   #header {
     width: 100%;
   }
- 
 }
 
 /* breakpoints on smaller screens

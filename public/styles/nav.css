@@ -1,15 +1,18 @@
 #nav-bar {
-  height: 120px;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  font-family: 'Bungee', cursive; 
-  padding: 1.5em;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  height              : 120px;
+  background-color    : #7BBAEA;
+  color               : #FFFFFF;
+  font-family         : 'Bungee', cursive; 
+  padding             : 25px;
+  position            : fixed;
+  top                 : 0;
+  width               : 100%;
 }
 
-#writeTweet {
-display: flex;
-justify-content: flex-end;
+.writeTweet {
+  display               : flex;
+  justify-content       : flex-end;
+  font-family           : 'Bungee', cursive; 
+  padding               : 25px;
+  top                   : 0;
 }

@@ -15,7 +15,7 @@ html {
  */
 
 body {
-  display: flex;
+  /* display: flex; */
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -24,18 +24,22 @@ body {
  
 }
 
-main.container {
+.container {
   background-color: #f4f1ec;
-  width: 40%;
-  margin: 0 auto; 
+  width: 90%;
+  margin: 2rem; 
 }
 
-@media only screen and (max-width: 768px) {
-  main.container {
-    width: 100%;
-  }
- 
+  @media only screen and (min-width: 1024px) {
+    body {
+      display: flex;
+    }
+    
+    .container {
+      width: 80%;
+    }
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
